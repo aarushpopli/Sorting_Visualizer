@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting Visualizer</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../Images/Logo.png">
+	<link rel = "stylesheet" type = "text/css" href = "../CSS/home.css">
+</head>
+
+<body style = "color: #ebebeb; background-color: #191919;">
+<h1 align = "center">Sorting Visualizer</h1>
+    <nav>
+        <div class = "row">
+
+        	<div class = "new">
+    			<button type = "button" class="newArray">New Array</button>
+			</div>
+
+            <div class = "col">
+
+                <span id = "size">  Size
+                    <input id = "arr_size" type = "range" min = "10" max = "100" step = 1>
+                </span>
+                <span id = "speed">Speed
+                    <input id = "speed_input" type = "range" min = "50" max = "500" step = 1>
+                </span>
+
+            </div>
+
+            <div class = "options">
+                <button type = "button" class="bubbleSort">Bubble Sort</button>
+                <button type = "button" class="selectionSort">Selection Sort</button>
+                <button type = "button" class="insertionSort">Insertion Sort</button>
+                <button type = "button" class="quickSort">Quick Sort</button>
+                <button type = "button" class="mergeSort">Merge Sort</button>
+            </div>
+
+    	</div>
+    </nav>
+
+    <div id = "bars" class="flex-container"></div>
+    <script src="../JavaScript/sorting.js"></script>
+    <script src="../JavaScript/bubble.js"></script>
+    <script src="../JavaScript/selection.js"></script>
+    <script src="../JavaScript/insertion.js"></script>
+    <script src="../JavaScript/quick.js"></script>
+    <script src="../JavaScript/merge.js"></script>
+    
+    <div class = "footer">
+		<a href = "bubble.html" class = "about" target="_blank">Bubble Sort</a>
+		<a href = "selection.html" class = "about" target="_blank">Selection Sort</a>
+		<a href = "insertion.html" class = "about" target="_blank">Insertion Sort</a>
+		<a href = "quick.html" class = "about" target="_blank">Quick Sort</a>
+		<a href = "merge.html" class = "about" target="_blank">Merge Sort</a>
+	</div>
+</body>
+</html>

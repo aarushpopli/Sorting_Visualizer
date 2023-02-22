@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Merge Sort</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../Images/Logo.png">
+	<link rel = "stylesheet" type = "text/css" href = "../CSS/about.css">
+</head>
+
+<body bgcolor="#191919">
+	<div class="header">
+		<div class="Heading">Merge Sort</div>
+	</div>
+
+	<div>
+		<p class = "para">
+		<p style="color: #2bc20e;">Merge Sort is a Divide and Conquer algorithm. It divides the input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves.</p>
+		
+		The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one in a sorted manner.<br>
+		See following implementation for details:<br>
+
+		MergeSort(arr[], l,  r)<br>
+		If r > l
+		<ol>
+     	<li>Find the middle point to divide the array into two halves:<br>
+            middle m = (l+r)/2</li>
+     	<li>Call mergeSort for first half:<br>
+            Call mergeSort(arr, l, m)</li>
+     	<li>Call mergeSort for second half:<br>
+            Call mergeSort(arr, m+1, r)</li>
+     	<li>Merge the two halves sorted in step 2 and 3:<br>
+            Call merge(arr, l, m, r)</li>
+        </ol>
+        <br>
+        <img src="../Images/MergeSort.png">
+		</p>
+	</div>
+
+	<div class="comp" style="float:right; clear: both; margin-top: 480px; width: 420px; padding-top: 17px;">
+		Worst Case Time Complexity : O(n*log(n))<br>
+		Average Time Complexity : Θ(n*log(n))<br>
+		Best Case Time Complexity : Ω(n*log(n))<br>
+		Space Complexity : O(n)<br>
+	</div>
+
+	<pre>
+		<code>
+	void merge(int arr[], int l, int m, int r)
+	{
+		int i, j, k;
+		int n1 = m - l + 1;
+		int n2 = r - m;
+
+		int L[n1], R[n2];
+		for (i = 0; i < n1; i++)
+			L[i] = arr[l + i];
+		for (j = 0; j < n2; j++)
+			R[j] = arr[m + 1+ j];
+
+		i = 0;
+		j = 0;
+		k = l;
+		while (i < n1 && j < n2)
+		{
+			if (L[i] <= R[j])
+			{
+				arr[k] = L[i];
+				i++;
+			}
+			else
+			{
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+		while (i < n1)
+		{
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+		while (j < n2)
+		{
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+	}
+
+	void mergeSort(int arr[], int l, int r)
+	{
+		if (l < r)
+		{
+			int m = l+(r-l)/2;
+			mergeSort(arr, l, m);
+			mergeSort(arr, m+1, r);
+			merge(arr, l, m, r);
+		}
+	}
+		</code>
+	</pre>
+
+	<div class = "fo" style="clear: both;">
+		<a href = "https://www.geeksforgeeks.org/quiz-mergesort-gq/" target="_blank" class = "about" style="float:left; background-color: #336600; padding: 10px; border-radius: 5px;">Practice Questions on Merge Sort</a>
+		<a href = "https://www.geeksforgeeks.org/" target="_blank" class = "about" style="float:right; background-color: #336600; padding: 10px; border-radius: 5px;">Source - GeeksForGeeks</a>
+	</div>
+
+	<style type="text/css">
+		pre{
+			background: #dc940f;
+			width: 600px;
+			height: 1050px;
+			border-radius: 10px;
+		}
+		code{
+			font-size: 15px;
+			color: #292826;
+			font-family: 'Source Code Pro', monospace;
+		}
+	</style>
+	
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quick Sort</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../Images/Logo.png">
+	<link rel = "stylesheet" type = "text/css" href = "../CSS/about.css">
+</head>
+
+<body bgcolor="#191919">
+	<div class="header">
+		<div class="Heading">Quick Sort</div>
+	</div>
+
+	<div>
+		<p class = "para">
+		<p style="color: #2bc20e;">QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.</p>
+
+		There are many different versions of quickSort that pick pivot in different ways.
+		<ol>
+		<li>Always pick first element as pivot.</li>
+		<li>Always pick last element as pivot.</li>
+		<li>Pick a random element as pivot.</li>
+		<li>Pick median as pivot.</li>
+		</ol>
+
+		The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.<br><br>
+
+		<img src="../Images/QuickSort.png">
+		</p>
+	</div>
+
+	<div class="comp" style="float:right; clear: both; margin-top: 200px; width: 405px; padding-bottom: 1px;">
+		Worst Case Time Complexity : O(n<sup>2</sup>)<br>
+		Average Time Complexity : Θ(n*log(n))<br>
+		Best Case Time Complexity : Ω(n*log(n))<br>
+		Space Complexity : O(log(n))<br>
+	</div>
+
+	<pre>
+		<code>
+	int partition (int arr[], int low, int high)
+	{
+		int pivot = arr[high];
+		int i = (low - 1);
+
+		for (int j = low; j <= high- 1; j++)
+		{
+			if (arr[j] <= pivot)
+			{
+				i++;
+				swap(&arr[i], &arr[j]);
+			}
+		}
+
+		swap(&arr[i + 1], &arr[high]);
+		return (i + 1);
+	}
+
+	void quickSort(int arr[], int low, int high)
+	{
+		if (low < high)
+		{
+			int pi = partition(arr, low, high);
+			quickSort(arr, low, pi - 1);
+			quickSort(arr, pi + 1, high);
+		}
+	}
+		</code>
+	</pre>
+
+	<div class = "fo" style="clear: both;">
+		<a href = "https://www.geeksforgeeks.org/quiz-quicksort-gq/" target="_blank" class = "about" style="float:left; background-color: #336600; padding: 10px; border-radius: 5px;">Practice Questions on Quick Sort</a>
+		<a href = "https://www.geeksforgeeks.org/" target="_blank" class = "about" style="float:right; background-color: #336600; padding: 10px; border-radius: 5px;">Source - GeeksForGeeks</a>
+	</div>
+
+	<style type="text/css">
+		pre{
+			background: #dc940f;
+			width: 660px;
+			height: 550px;
+			border-radius: 10px;
+		}
+		code{
+			font-size: 15px;
+			color: #292826;
+			font-family: 'Source Code Pro', monospace;
+		}
+	</style>
+	
+</body>
+</html>

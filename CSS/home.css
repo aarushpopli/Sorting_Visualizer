@@ -1,0 +1,88 @@
+body {
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+	user-select: none;
+}
+h1{
+	font-size: 30px;
+	color: #ebebeb;
+	cursor: default;
+	padding-bottom: 10px;
+}
+button{
+	cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+    height: 40px;
+    width: 160px;
+    color: #ebebeb;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px #010203;
+    border-radius: 15px;
+	cursor: pointer;
+}
+button:active{
+	transform: scale(0.98);
+	color: #45f248;
+}
+.row{
+	display: grid;
+	grid-template-columns: 1fr 3fr 8fr ;
+}
+.col{
+	display: grid;
+	grid-template-columns: 1fr;
+	position: relative;
+	right: -60px;
+	cursor: pointer;
+	font-size: 15px;
+}
+#arr_size{
+	height: 5px;
+}
+#speed_input{
+	height: 5px;
+}
+.new{
+	position: relative;
+	right: -20px;
+}
+.flex-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    transition: 2s all ease;
+}
+.flex-item{
+    background: #ebebeb;
+    border: 1pt solid #323232;
+    width: 10px;
+    transition: 0.1s all ease;
+}
+.about{
+	text-decoration: none;
+	color: #323232;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+.footer {
+  	position: fixed;
+  	left: 0;
+  	bottom: 0;
+  	height: 25px;
+  	width: 100%;
+  	background-color: #ebebeb;
+  	padding-top: 10px;
+  	padding-bottom: 10px;
+  	text-align: center;
+  	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	letter-spacing: 0.5px;
+    word-spacing: 2.5px;
+}
